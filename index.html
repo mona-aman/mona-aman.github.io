@@ -186,12 +186,37 @@
             flex: 1;
             min-width: 300px;
             text-align: center;
+            position: relative;
         }
         
-        .about-img img {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        .profile-photo {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .profile-photo:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .photo-instruction {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #eef5ff;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--primary);
+            text-align: left;
+        }
+        
+        .photo-instruction h4 {
+            margin-bottom: 10px;
+            color: var(--secondary);
         }
         
         .about-text {
@@ -518,6 +543,11 @@
             .section-title {
                 font-size: 2rem;
             }
+            
+            .profile-photo {
+                width: 250px;
+                height: 250px;
+            }
         }
     </style>
 </head>
@@ -560,8 +590,18 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-img">
-                    <!-- Replace with your image or remove this div -->
+                    <!-- Replace with your actual photo -->
                     <img src="images/profile.png" alt="Mona Aman" class="profile-photo">
+                    <div class="photo-instruction">
+                        <h4>How to Add Your Photo:</h4>
+                        <ol>
+                            <li>Click "Add file" → "Upload files" in your GitHub repository</li>
+                            <li>Drag your photo to the upload area</li>
+                            <li>Before the filename, type: <code>images/</code></li>
+                            <li>Commit the changes</li>
+                            <li>Update the HTML: Change <code>src="https://via.placeholder.com/400x400"</code> to <code>src="images/your-photo.jpg"</code></li>
+                        </ol>
+                    </div>
                 </div>
                 <div class="about-text">
                     <h3>Research Engineer & AI Specialist</h3>
