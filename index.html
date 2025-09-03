@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mona Aman - Research Engineer Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #3498db;
+            --secondary: #2c3e50;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: var(--secondary);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin-top: 80px;
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #7f8c8d;
+        }
+        
+        .hero-btns .btn {
+            margin: 0 10px;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .about-img {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .about-img img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .skill {
+            background: #eef5ff;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--primary);
+        }
+        
+        /* Research Section */
+        .research {
+            background: #f5f7fa;
+        }
+        
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .research-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .research-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .research-info {
+            padding: 20px;
+        }
+        
+        .research-info h3 {
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+        
+        .research-info p {
+            color: #7f8c8d;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .research-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .research-tag {
+            background: #eef5ff;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: var(--primary);
+        }
+        
+        /* Experience Section */
+        .experience-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .experience-item {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .experience-title {
+            font-size: 1.3rem;
+            color: var(--secondary);
+        }
+        
+        .experience-date {
+            color: var(--primary);
+            font-weight: 500;
+        }
+        
+        .experience-place {
+            color: #7f8c8d;
+            margin-bottom: 15px;
+        }
+        
+        /* Education Section */
+        .education {
+            background: #f5f7fa;
+        }
+        
+        .education-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .education-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .education-card h3 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        .education-card p {
+            color: #7f8c8d;
+            margin-bottom: 10px;
+        }
+        
+        /* Achievements Section */
+        .achievements-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .achievement-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .achievement-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .achievement-card h3 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        /* Contact Section */
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .contact-details {
+            list-style: none;
+        }
+        
+        .contact-details li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-details i {
+            margin-right: 10px;
+            color: var(--primary);
+            font-size: 1.2rem;
+            width: 20px;
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .social-links li {
+            margin: 0 10px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--primary);
+        }
+        
+        /* References Section */
+        .references {
+            background: #f5f7fa;
+        }
+        
+        .references-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .reference-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .reference-card h3 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        .reference-card p {
+            color: #7f8c8d;
+            margin-bottom: 10px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Mona<span>Aman</span></div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="menu-toggle">☰</div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Mona Aman</h1>
+                <p>Research Engineer | AI in Healthcare | Multimodal Learning</p>
+                <p>Passionate about AI-driven healthcare solutions that exploit multimodal learning, integrating visual and textual data, medical Imaging, Generative Models, explainable AI, and natural language processing.</p>
+                <div class="hero-btns">
+                    <a href="#research" class="btn">View My Research</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-img">
+                    <!-- Replace with your image or remove this div -->
+                    <img src="https://via.placeholder.com/400x400" alt="Mona Aman">
+                </div>
+                <div class="about-text">
+                    <h3>Research Engineer & AI Specialist</h3>
+                    <p>I am passionate about AI-driven healthcare solutions that exploit multimodal learning, integrating visual and textual data, medical Imaging, Generative Models, explainable AI, and natural language processing. Focused on advancing innovative, interpretable AI applications in healthcare.</p>
+                    
+                    <h3>Education</h3>
+                    <p><strong>Carnegie Mellon University</strong> (2023 – 2025)<br>
+                    Master of Science in Engineering Artificial Intelligence<br>
+                    Rwanda, Kigali</p>
+                    
+                    <p><strong>University Of Khartoum</strong> (2021)<br>
+                    Bachelor of Computer Science<br>
+                    Sudan, Khartoum</p>
+                    
+                    <h3>Technical Skills</h3>
+                    <div class="skills">
+                        <span class="skill">Python</span>
+                        <span class="skill">SQL</span>
+                        <span class="skill">LangChain</span>
+                        <span class="skill">PyTorch</span>
+                        <span class="skill">TensorFlow</span>
+                        <span class="skill">Keras</span>
+                        <span class="skill">Multimodal Learning</span>
+                        <span class="skill">PINNs</span>
+                        <span class="skill">Federated Learning</span>
+                        <span class="skill">Contrastive Learning</span>
+                        <span class="skill">LLMs</span>
+                        <span class="skill">VLMs</span>
+                        <span class="skill">Segmentation</span>
+                        <span class="skill">Super-Resolution</span>
+                        <span class="skill">Image-Text Modeling</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="research">
+        <div class="container">
+            <h2 class="section-title">Research Projects</h2>
+            <div class="research-grid">
+                <div class="research-card">
+                    <div class="research-info">
+                        <h3>BeatDiff for Comprehensive ECG Analysis</h3>
+                        <p>Denoising and Classification of Cardiac Arrhythmias</p>
+                        <div class="research-tags">
+                            <span class="research-tag">ECG</span>
+                            <span class="research-tag">Diffusion Models</span>
+                            <span class="research-tag">Arrhythmia</span>
+                        </div>
+                        <p>Fine-tuned a pretrained ECG diffusion model (BeatDiff) on a large-scale arrhythmia dataset for heartbeat denoising and morphology reconstruction. Developed an ECG preprocessing pipeline (segmentation, normalization, R-peak detection).</p>
+                    </div>
+                </div>
+                
+                <div class="research-card">
+                    <div class="research-info">
+                        <h3>Sparsification of CLIP</h3>
+                        <p>Using conceptual decomposition</p>
+                        <div class="research-tags">
+                            <span class="research-tag">CLIP</span>
+                            <span class="research-tag">Sparsity</span>
+                            <span class="research-tag">Interpretability</span>
+                        </div>
+                        <p>Improved CLIP interpretability by applying structured sparsity and conceptual decomposition, enhancing model transparency. Developed visualization tools (SpLiCE, Grad-ECLIP, SPADE) to explain multimodal predictions without loss in performance.</p>
+                    </div>
+                </div>
+                
+                <div class="research-card">
+                    <div class="research-info">
+                        <h3>Cardiovascular Anatomy Tracking</h3>
+                        <p>Movement tracking with PINNs</p>
+                        <div class="research-tags">
+                            <span class="research-tag">PINNs</span>
+                            <span class="research-tag">Segmentation</span>
+                            <span class="research-tag">3D Mesh</span>
+                        </div>
+                        <p>Developed deep learning models for cardiovascular segmentation and strain calculation using Physics-Informed Neural Networks (PINNs). Applied 3D mesh generation for motion tracking.</p>
+                    </div>
+                </div>
+
+                <div class="research-card">
+                    <div class="research-info">
+                        <h3>Multimodal Learning for Chest X-ray</h3>
+                        <p>Joint Image-Text Modeling</p>
+                        <div class="research-tags">
+                            <span class="research-tag">Multimodal</span>
+                            <span class="research-tag">X-ray</span>
+                            <span class="research-tag">Contrastive Learning</span>
+                        </div>
+                        <p>Developed a contrastive learning model aligning chest X-ray images and radiology reports using ALBEF and BioBERT. Applied Grad-CAM for model explainability.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="experience-content">
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3 class="experience-title">Research Associate</h3>
+                        <span class="experience-date">3 Months</span>
+                    </div>
+                    <p class="experience-place">Carnegie Mellon University – AI for Healthcare Lab, Rwanda</p>
+                    <p>Conducting research on Rheumatic Heart Disease (RHD) and advanced cardiac signal analysis, including ECG-based arrhythmia reconstruction using diffusion models. Contributing to the development of a smart stethoscope for improved cardiac auscultation and early disease detection.</p>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3 class="experience-title">ML Consultant</h3>
+                        <span class="experience-date">3 Months</span>
+                    </div>
+                    <p class="experience-place">Visortech Solutions, Kenya</p>
+                    <p>Contributed to Sera AI model development by implementing web search integration, reranking algorithms, and orchestrated retrieval workflows for policy-specific AI applications. Co-authored the research paper, including literature review and methodology design, demonstrating the use of LLMs for accelerating evidence-based AMR policymaking.</p>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3 class="experience-title">System Engineer</h3>
+                        <span class="experience-date">3 Months</span>
+                    </div>
+                    <p class="experience-place">Huawei, Sudan</p>
+                    <p>Configured and deployed telecom services, optimizing database management.</p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3 class="experience-title">Teaching Assistant</h3>
+                        <span class="experience-date">4 Months</span>
+                    </div>
+                    <p class="experience-place">Carnegie Mellon University</p>
+                    <p>Teaching Assistant for AI for Healthcare/digital transformation Courses (10 hours per week).</p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3 class="experience-title">Teaching Assistant</h3>
+                        <span class="experience-date">1 Year</span>
+                    </div>
+                    <p class="experience-place">University of Khartoum</p>
+                    <p>Teaching Assistant for Machine Learning & Python Labs (10 Hours per week).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements">
+        <div class="container">
+            <h2 class="section-title">Achievements & Awards</h2>
+            <div class="achievements-content">
+                <div class="achievement-card">
+                    <i class="fas fa-award"></i>
+                    <h3>African Computer Vision Summer School</h3>
+                    <p>2025 summer with 7% Acceptance rate</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>MasterCard Foundation Full Scholarship</h3>
+                    <p>CMU Africa with 20% Acceptance rate</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Best Academic Performance</h3>
+                    <p>Final year, University of Khartoum (1st out of 30 students)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- References Section -->
+    <section class="references">
+        <div class="container">
+            <h2 class="section-title">References</h2>
+            <div class="references-content">
+                <div class="reference-card">
+                    <h3>Ahmed Biyabani</h3>
+                    <p>Associate Teaching Professor, CMU-Africa</p>
+                    <p>Served as a teaching assistant for multiple courses taught by the professor.</p>
+                    <p>ahmedbiyabani@gmail.com</p>
+                </div>
+                
+                <div class="reference-card">
+                    <h3>Carine Mukamakuza</h3>
+                    <p>Assistant Teaching Professor, CMU-Africa</p>
+                    <p>Supervised by faculty in the AI for Healthcare Lab.</p>
+                    <p>cmukamak@andrew.cmu.edu</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's talk about everything!</h3>
+                    <p>Feel free to reach out if you're looking for a developer, have a question, or just want to connect.</p>
+                    <ul class="contact-details">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Rwanda, Kigali</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>amona@alumni.cmu.edu</span>
+                        </li>
+                        <li>
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="logo">Mona<span>Aman</span></div>
+            <ul class="social-links">
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fab fa-github"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i></a></li>
+            </ul>
+            <p>&copy; 2023 Mona Aman. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // In a real application, you would send the form data to a server
+            // For this example, we'll just show an alert and reset the form
+            alert('Thanks for your message! I\'ll get back to you soon.');
+            this.reset();
+        });
+        
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            header.classList.toggle('scrolled', window.scrollY > 100);
+        });
+    </script>
+</body>
+</html>
