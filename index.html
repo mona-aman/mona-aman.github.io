@@ -1,143 +1,5 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mona Aman | Portfolio</title>
-  <style>
-    :root {
-      --primary: #4a90e2; /* soft blue */
-      --secondary: #2c3e50; /* dark gray-blue */
-      --background: #f7fafd; /* light calm background */
-    }
-    * {margin:0; padding:0; box-sizing:border-box;}
-    body {font-family: Arial, sans-serif; line-height:1.6; color:#333; background:var(--background);}
-    header {text-align:center; padding:40px 20px;} /* reduced padding */
-    header h1 {font-size:2rem; color:var(--secondary); margin-bottom:8px;}
-    header p {font-size:1rem; color:#555;}
-    nav {text-align:center; margin-bottom:20px;}
-    nav a {color:var(--secondary); margin:0 10px; text-decoration:none; font-size:0.9rem; font-weight:500;}
-    section {padding:30px 20px; max-width:1000px; margin:auto;} /* tighter spacing */
-    .section-title {text-align:center; margin-bottom:20px; font-size:1.4rem; color:var(--secondary);}
-    .grid {display:grid; gap:15px; grid-template-columns:repeat(auto-fill,minmax(260px,1fr));}
-    .card {background:white; border-radius:10px; padding:15px; box-shadow:0 2px 6px rgba(0,0,0,0.05);} /* smaller cards */
-    .card h3 {margin-bottom:8px; color:var(--primary); font-size:1rem;}
-    .card p {font-size:0.9rem; color:#555;}
-    .summer-grid {display:grid; gap:15px; grid-template-columns:repeat(auto-fill,minmax(260px,1fr));}
-    .summer-card {background:white; border-radius:10px; padding:12px; text-align:center; box-shadow:0 2px 6px rgba(0,0,0,0.05); transition:transform 0.2s;}
-    .summer-card:hover {transform:translateY(-3px);}
-    .summer-card img {width:100%; border-radius:8px; height:150px; object-fit:cover; background:#e6eef7;} /* placeholder space */
-    .summer-card h3 {margin:10px 0 6px; color:var(--primary); font-size:1rem;}
-    .summer-card p {font-size:0.85rem; color:#555;}
-    .highlight {border:2px solid var(--primary);}
-    footer {text-align:center; padding:20px; font-size:0.85rem; color:#555;}
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Mona Aman</h1>
-    <p>Data Analyst | Machine Learning | Healthcare AI</p>
-  </header>
-
-  <nav>
-    <a href="#about">About</a>
-    <a href="#research">Research</a>
-    <a href="#projects">Projects</a>
-    <a href="#summer2025">2025 Summer</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <section id="about">
-    <h2 class="section-title">About Me</h2>
-    <div class="card">
-      <p>
-        I’m Mona Aman, a Data Analyst and Researcher passionate about applying
-        machine learning to healthcare problems. I’ve worked on projects ranging
-        from medical image segmentation to risk alert systems, with experience
-        in Python, scikit-learn, PyTorch, and NLP. I also enjoy contributing to
-        community-driven AI initiatives in Africa.
-      </p>
-    </div>
-  </section>
-
-  <section id="research">
-    <h2 class="section-title">Research</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Sepsis Prediction</h3>
-        <p>Developed a Random Forest model on ICU data, analyzing confounders and payment disparities.</p>
-      </div>
-      <div class="card">
-        <h3>Medical Imaging</h3>
-        <p>Worked on U-Net segmentation and preprocessing pipelines for ultrasound, nifti, and DICOM images.</p>
-      </div>
-      <div class="card">
-        <h3>NLP in Healthcare</h3>
-        <p>Built medical note summarization systems and Amharic next-word prediction models using RNNs.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <h2 class="section-title">Projects</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Risk Alert Dashboard</h3>
-        <p>Designed a dashboard for healthcare risk alerts integrating ML predictions with doctor-first alerts.</p>
-      </div>
-      <div class="card">
-        <h3>CIFAR-100 Classification</h3>
-        <p>Implemented CNN architectures and efficient adaptive ensembling to achieve 60%+ accuracy.</p>
-      </div>
-      <div class="card">
-        <h3>Face Detection (WiderFace)</h3>
-        <p>Trained a detector with custom collate function, handling bounding boxes and landmarks.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="summer2025">
-    <h2 class="section-title">2025 Summer</h2>
-    <p style="text-align:center; color:#555; max-width:700px; margin:0 auto 20px;">
-      A fun and impactful summer — learning, networking, and winning!
-    </p>
-
-    <div class="summer-grid">
-      <div class="summer-card">
-        <img src="images/cvs.jpg" alt="CVS Summer School">
-        <h3>CVS Summer School</h3>
-        <p>Selected to attend the African Computer Vision Summer School (7% acceptance rate).</p>
-      </div>
-
-      <div class="summer-card">
-        <img src="images/indaba.jpg" alt="Indaba 2025">
-        <h3>Deep Learning Indaba</h3>
-        <p>Attended Africa’s largest AI gathering — exchanging ideas with brilliant researchers.</p>
-      </div>
-
-      <div class="summer-card highlight">
-        <img src="images/hackathon.jpg" alt="Hackathon Win">
-        <h3>🏆 Hackathon 2nd Place</h3>
-        <p>Collaborated with a team to design an innovative AI-for-healthcare solution, winning 2nd place!</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2 class="section-title">Contact</h2>
-    <div class="card" style="text-align:center;">
-      <p>Email: <a href="mailto:mona@example.com">mona@example.com</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/monaaman" target="_blank">linkedin.com/in/monaaman</a></p>
-      <p>GitHub: <a href="https://github.com/monaaman" target="_blank">github.com/monaaman</a></p>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2025 Mona Aman | Built with 💙</p>
-  </footer>
-</body>
-</html>
-<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -973,8 +835,8 @@
                             <input type="email" id="email" name="email" required>
                         </div>
                         <div class="form-group"> -->
-<!--                             <label for="message">Message</label> -->
-<!--                             <textarea id="message" name="message" required></textarea>
+                             <label for="message">Message</label> -->
+                             <textarea id="message" name="message" required></textarea>
                         </div>
                         <button type="submit" class="btn">Send Message</button>
                     </form>
@@ -983,8 +845,8 @@
         </div>
     </section> -->
 
-    <!-- Footer -->
-<!--     <footer>
+     Footer -->
+     <footer>
         <div class="container">
             <div class="logo">Mona<span>Aman</span></div>
             <ul class="social-links">
@@ -997,7 +859,7 @@
         </div>
     </footer>
  -->
-<!--     <script>
+    <script>
         // Mobile menu toggle
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
@@ -1011,7 +873,7 @@
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
             }); -->
-<!--         });
+         });
         
         // Form submission handling
         document.getElementById('contactForm').addEventListener('submit', function(e) {
@@ -1032,4 +894,4 @@
 </body>
 </html> -->
 
-<!--  --> -->
+  -->
